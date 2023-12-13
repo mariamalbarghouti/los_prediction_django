@@ -1,0 +1,86 @@
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #25966B;
+            font-family: 'Afacad', sans-serif;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 0;
+            left: -5px;
+            padding: 10px;
+        }
+
+        .logo img {
+            width: 50%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            text-align: center;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #33B67D;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Adjust the text alignment and color for the h2 element */
+        h2 {
+            text-align: left;
+            color: #33B67D; /* Change the text color to #87DBB4 */
+        }
+
+         input[type="radio"]:checked  {
+              accent-color:  #A40153;
+              border-color: #A40153;
+        }
+.er-group {
+    text-align: left; /* Adjust text alignment as needed */
+    display: block;
+}
+.er-options {
+    display: flex;
+     width:20px;
+    flex-direction: row; /* Display items horizontally */
+}
+.radio_value{
+ float:left;
+   margin:5px 0 0 10px;
+color:#7B7B7B;
+
+}
+.patient_label{
+  color: #25966B;
+}
+
+.provider-select::placeholder {
+    color: #7B7B7B; /* Change this to the desired color */
+}

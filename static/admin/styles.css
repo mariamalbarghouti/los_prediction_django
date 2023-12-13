@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #25966B;
+}
+
+.logo {
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    padding: 10px;
+}
+
+.logo img {
+    width: 50%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    text-align: center;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #33B67D;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Adjust the text alignment and color for the h2 element */
+h2 {
+    text-align: left;
+    color: #33B67D;
+}
+
+.provider-select {
+    box-sizing: border-box;
+}

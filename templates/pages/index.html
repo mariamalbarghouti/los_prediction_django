@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOS Prediction</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <!-- Patient Info -->
+            <h2>Patient Info</h2>
+<!-- Day -->
+     <input class="provider-select"  type="number" placeholder="Delivery Day">
+<!-- Month -->
+    <input class="provider-select"  type="number" placeholder="Delivery Month">
+
+             <!-- Specific Assessment -->
+            <select class="provider-select" >
+                <option style="color: #7B7B7B;">Select Specific Assessment</option>
+                {% for key, value in specific_assessment.items %}
+                    <option style="color: #7B7B7B;" value="{{value}}">{{ value }}</option>
+                {% endfor %}
+            </select>
+            <!-- ER -->
+ <div class="er-group">
+     <label class="patient_label">ER</label>
+      <br>
+
+     <!-- Yes -->
+      <div class="er-options">
+          <input type="radio" name="er" id="er-yes" value="yes">
+          <label class="radio_value">Yes</label>
+      </div>
+     <!-- No -->
+      <div class="er-options">
+          <input type="radio" name="er" id="er-no" value="no" checked>
+          <label class="radio_value">No</label>
+      </div>
+ </div>
+
+<!--            &lt;!&ndash; Select a Doctor &ndash;&gt;-->
+<!--            <select class="provider-select" name="doctor">-->
+<!--                <option>Select a Doctor</option>-->
+<!--                {% for provider in providers %}-->
+<!--                    <option value="{{provider}}">{{ provider }}</option>-->
+<!--                {% endfor %}-->
+<!--            </select>-->
+
+<!--            &lt;!&ndash; Select a Provider &ndash;&gt;-->
+<!--            <select class="provider-select" name="provider">-->
+<!--                <option>Select a Provider</option>-->
+<!--                {% for provider in providers %}-->
+<!--                    <option value="{{provider}}">{{ provider }}</option>-->
+<!--                {% endfor %}-->
+<!--            </select>-->
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" />
+    </div>
+</body>
+</html>
