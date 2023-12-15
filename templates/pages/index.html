@@ -12,57 +12,51 @@
 </head>
 <body>
     <div class="container">
-        <form>
-            <!-- Patient Info -->
-            <h2>Patient Info</h2>
-<!-- Day -->
-     <input class="provider-select"  type="number" placeholder="Delivery Day">
-<!-- Month -->
-    <input class="provider-select"  type="number" placeholder="Delivery Month">
+        <form method="post" action="{% url 'submit_form' %}">
+    {% csrf_token %}
+    <!-- Patient Info -->
+    <h2>Patient Info</h2>
+    <!-- Days -->
+<!--    <input class="provider-select" type="number" name="delivery_day" placeholder="Delivery Day">-->
+             <select class="provider-select" name="delivery_day">
+        <option style="color: #7B7B7B;">Select Delivery Day</option>
+        {% for  day in days %}
+            <option style="color: #7B7B7B;" value="{{ day }}">{{ day }}</option>
+        {% endfor %}
+    </select>
+    <!-- Months -->
+<!--    <input class="provider-select" type="number" name="delivery_month" placeholder="Delivery Month">-->
+            <select class="provider-select" name="delivery_month">
+        <option style="color: #7B7B7B;">Select Month</option>
+        {% for key, value in months.items %}
+            <option style="color: #7B7B7B;" value="{{ key }}">{{ value }}</option>
+        {% endfor %}
+    </select>
+    <!-- Specific Assessment -->
+    <select class="provider-select" name="selected_assessment">
+        <option style="color: #7B7B7B;">Select Specific Assessment</option>
+        {% for key, value in specific_assessment.items %}
+            <option style="color: #7B7B7B;" value="{{ key }}">{{ value }}</option>
+        {% endfor %}
+    </select>
+    <!-- ER -->
+    <div class="er-group">
+        <label class="patient_label">ER</label><br>
+        <!-- Yes -->
+        <div class="er-options">
+            <input type="radio" name="er" id="er-yes" value="1">
+            <label class="radio_value">Yes</label>
+        </div>
+        <!-- No -->
+        <div class="er-options">
+            <input type="radio" name="er" id="er-no" value="0" checked>
+            <label class="radio_value">No</label>
+        </div>
+    </div>
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+</form>
 
-             <!-- Specific Assessment -->
-            <select class="provider-select" >
-                <option style="color: #7B7B7B;">Select Specific Assessment</option>
-                {% for key, value in specific_assessment.items %}
-                    <option style="color: #7B7B7B;" value="{{value}}">{{ value }}</option>
-                {% endfor %}
-            </select>
-            <!-- ER -->
- <div class="er-group">
-     <label class="patient_label">ER</label>
-      <br>
-
-     <!-- Yes -->
-      <div class="er-options">
-          <input type="radio" name="er" id="er-yes" value="yes">
-          <label class="radio_value">Yes</label>
-      </div>
-     <!-- No -->
-      <div class="er-options">
-          <input type="radio" name="er" id="er-no" value="no" checked>
-          <label class="radio_value">No</label>
-      </div>
- </div>
-
-<!--            &lt;!&ndash; Select a Doctor &ndash;&gt;-->
-<!--            <select class="provider-select" name="doctor">-->
-<!--                <option>Select a Doctor</option>-->
-<!--                {% for provider in providers %}-->
-<!--                    <option value="{{provider}}">{{ provider }}</option>-->
-<!--                {% endfor %}-->
-<!--            </select>-->
-
-<!--            &lt;!&ndash; Select a Provider &ndash;&gt;-->
-<!--            <select class="provider-select" name="provider">-->
-<!--                <option>Select a Provider</option>-->
-<!--                {% for provider in providers %}-->
-<!--                    <option value="{{provider}}">{{ provider }}</option>-->
-<!--                {% endfor %}-->
-<!--            </select>-->
-
-            <!-- Submit Button -->
-            <input type="submit" value="Submit">
-        </form>
     </div>
     <div class="logo">
         <img src="{% static 'images/logo.png' %}" alt="Logo" />

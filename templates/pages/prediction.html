@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOS Prediction</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <b> LOS Prediction is: {{prediction_value}} Days</b>
+    </div>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" />
+    </div>
+</body>
+</html>
