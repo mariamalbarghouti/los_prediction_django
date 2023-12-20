@@ -12,10 +12,16 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import tensorflow.python as tf
+from keras.src.losses import sparse_categorical_crossentropy
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+LABEL_DTYPES_FOR_LOSSES = {
+    sparse_categorical_crossentropy: "int32",
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -25,8 +31,8 @@ SECRET_KEY = "django-insecure-79gq_32&eb3$f5a$f==(&9c1+2_zvzz-e4t(o+u@svrgf_pbi0
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['AlbarghoutiMariam.pythonanywhere.com']
+# # 'AlbarghoutiMariam.pythonanywhere.com'
+ALLOWED_HOSTS = []
 
 
 # Application definition

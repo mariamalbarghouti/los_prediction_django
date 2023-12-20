@@ -16,8 +16,9 @@
     {% csrf_token %}
     <!-- Patient Info -->
     <h2>Patient Info</h2>
-    <!-- Days -->
-<!--    <input class="provider-select" type="number" name="delivery_day" placeholder="Delivery Day">-->
+    <!-- Age -->
+    <input class="provider-select" type="number" name="age" placeholder="Age">
+    <!-- Delivery Day -->
              <select class="provider-select" name="delivery_day">
         <option style="color: #7B7B7B;">Select Delivery Day</option>
         {% for  day in days %}
@@ -25,18 +26,32 @@
         {% endfor %}
     </select>
     <!-- Months -->
-<!--    <input class="provider-select" type="number" name="delivery_month" placeholder="Delivery Month">-->
             <select class="provider-select" name="delivery_month">
         <option style="color: #7B7B7B;">Select Month</option>
         {% for key, value in months.items %}
             <option style="color: #7B7B7B;" value="{{ key }}">{{ value }}</option>
         {% endfor %}
     </select>
+    <!-- Provider Name -->
+    <select class="provider-select" name="provider_name">
+        <option style="color: #7B7B7B;">Select Provider Name</option>
+        {% for  provider in provider_names %}
+            <option style="color: #7B7B7B;" value="{{ provider }}">{{ provider|cut:"Provider Name_" }}
+</option>
+        {% endfor %}
+    </select>
     <!-- Specific Assessment -->
     <select class="provider-select" name="selected_assessment">
         <option style="color: #7B7B7B;">Select Specific Assessment</option>
         {% for key, value in specific_assessment.items %}
-            <option style="color: #7B7B7B;" value="{{ key }}">{{ value }}</option>
+            <option style="color: #7B7B7Bs;" value="{{ key }}">{{ value }}</option>
+        {% endfor %}
+    </select>
+  <!-- Diagnosis-->
+            <select class="provider-select" name="diagnosis">
+        <option style="color: #7B7B7B;">Select Diagnosis</option>
+        {% for  diagnosis in diagnosis_list %}
+            <option style="color: #7B7B7B;" value="{{ diagnosis }}">{{ diagnosis|cut:"Discharge Diagnosis_" }}</option>
         {% endfor %}
     </select>
     <!-- ER -->

@@ -2,14 +2,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            margin: 5px 0 0 90px;
             background-color: #25966B;
             font-family: 'Afacad', sans-serif;
         }
 
         .logo {
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: -5px;
             padding: 10px;
